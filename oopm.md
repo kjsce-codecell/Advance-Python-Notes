@@ -70,7 +70,7 @@ Inheritance is one of the most powerful concepts of object oriented programming.
 It is the mechanism of deriving features of one class from another class facilitating
 code reusability.
 It constitutes defining a new class which is similar or identical to a class that 
-already exists. The new class is hence called #####derived##### class or 
+already exists. The new class is hence called ##### derived ##### class or 
 ##### child ##### class and the one from which it is inherited is called the 
 ##### base ##### class or the ##### parent ##### class.
 For example:
