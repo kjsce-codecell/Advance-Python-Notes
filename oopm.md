@@ -66,32 +66,180 @@ Hi, my name is Vinitra
 ```
 ### Inheritance
 
-Inheritance is one of the most powerful concepts of object oriented programming.
-It is the mechanism of deriving features of one class from another class facilitating
-code reusability.
-It constitutes defining a new class which is similar or identical to a class that 
-already exists. The new class is hence called ##### derived ##### class or 
-##### child ##### class and the one from which it is inherited is called the 
-##### base ##### class or the ##### parent ##### class.
-For example:
+#### 1. Introduction
+
+    Inheritance is one of the most powerful concepts of object oriented programming.
+    It is the mechanism of deriving features of one class from another class facilitating
+    code reusability.
+    It constitutes defining a new class which is similar or identical to a class that 
+    already exists. The new class is hence called derived class or child class and the one 
+    from which it is inherited is called the base class or the parent class.
+
+    For example:
+    ```python
+    class side:
+        def __init__(self,l,b):
+            self.l=l
+            self.b=b
+
+    class area(side):
+
+        def __init__(self,l,b):
+            side.__init__(self,l,b)
+
+        def Area(self):
+            print('Area of the rectange is ',self.l*self.b)
+
+    a=area(4,5)
+    a.Area()
+    ```
+    Output:
+    ```
+    Area of the rectangle is 20
+    ```
+#### 2. Super()
+
+    ```super()``` method is used to access data members and functions of parent class.
+    The example given in the example for inheritance can also be executed by the
+    ```super()``` method.
+
+    For example:
+    ```python
+    class side:
+        def __init__(self,l,b):
+            self.l=l
+            self.b=b
+
+    class area(side):
+        
+        def __init__(self,l,b):
+            super(area,self).__init__(l,b)
+
+        def Area(self):
+            print('Area of the rectange is ',self.l*self.b)
+
+    a=area(4,5)
+    a.Area()
+    ```
+    Output:
+    ```
+    Area of the rectangle is 20
+    ```
+### Operator Overloading
+
+Python operators work for built-in classes. But the same operators can be made to behave
+in a user-defined way. For example, the + operator adds the primitive variables of 
+primitive data types. But by operator overloading you can make the + operator to 
+add two complex numbers!
+This feature that allows operators to have to different functions according to context
+is called Operator Overloading.
+See the example below to see how to overload operators.
+Example:
 ```python
-class side:
-    def __init__(self,l,b):
-        self.l=l
-        self.b=b
+class Point:
+    def __init__(self,x,y):
+        self.x=x
+        self.y=y
 
-class area(side):
+    def __str__(self):
+        return "({0},{1})",format(self.x,self.y)
 
-    def __init__(self,l,b):
-        side.__init__(self,l,b)
+    def __add__(self,other):
+        x=self.x+other.x
+        y=self.y+other.y
+        print()
 
-    def Area(self):
-        print('Area of the rectange is ',self.l*self.b)
-
-a=area(4,5)
-a.Area()
+p1=Point(2,4)
+p2=Point(-1,5)
+print(p1+p2)
 ```
 Output:
 ```
-Area of the rectangle is 20
+(1,9)
 ```
+What happens is that, when you write p1+p2, python will call p1.__add__(p2) which in
+turn is Point.__add__(p1,p2). Also in the above example, __str__ is special function
+like the __init__ method i.e it gets called whenever the class is instantiated.
+This method is used to control the output format
+
+### Special Functions
+
+Special functions are those methods which get executed as soon as the class is
+instantiated. For example: the __init__ method.
+There are many useful special functions in python. Given below are some of them.
+
+    1. __iter__: This method returns the iterator object and is implicitly called
+    at the start of loops.    
+    2. __next__: This method returns the next value and is implicity called at 
+    each loop increment.
+
+    Example:
+    ```python
+    class Counter:
+    def __init__(self, low, high):
+        self.current = low
+        self.high = high
+
+    def __iter__(self):
+        return self
+
+    def __next__(self): # Python 2: def next(self)
+        if self.current > self.high:
+            raise StopIteration
+        else:
+            self.current += 1
+            return self.current - 1
+
+    for c in Counter(3, 8):
+    print(c)
+    ```
+    Output:
+    ```
+    3
+    4
+    5
+    6
+    7
+    8
+    ```
+
+    3. __str__ & __repr__: Both the functions are similar, i.e both are used to "represent"
+    an object in a string. __repr__ gives you an official representation while __str gives
+    informal  representation.
+    For example:
+    ```python
+    x=1
+    print(repr(x))
+    print(str(x))
+    y='string'
+    print(repr(y))
+    print(str(y))
+    ```
+    Output:
+    ```
+    1
+    1
+    'string'
+    string
+    ```
+    In the above example, the return of repr() and str() are identical for int x, but not for
+    string y. Therefore the default implementation of __repr__ for a str object can be called as
+    an argument to eval and the return value would be a valid str object.
+
+    4. dir(): This method takes only 1 object as a parameter and returns a list of 
+    attributes of the object.
+    For example:
+    ```python
+    class num:
+        def __init__(self):
+            return [1,2,3]
+
+    n=num()
+    print(dir(n))
+    ```
+    Output:
+    ```
+    [1,2,3]
+    ```
+
+
