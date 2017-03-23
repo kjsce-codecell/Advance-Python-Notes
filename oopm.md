@@ -168,78 +168,78 @@ Special functions are those methods which get executed as soon as the class is
 instantiated. For example: the __init__ method.
 There are many useful special functions in python. Given below are some of them.
 
-    1. __iter__: This method returns the iterator object and is implicitly called
-    at the start of loops.    
-    2. __next__: This method returns the next value and is implicity called at 
-    each loop increment.
+1. __iter__: This method returns the iterator object and is implicitly called
+at the start of loops.    
+2. __next__: This method returns the next value and is implicity called at 
+each loop increment.
 
-    Example:
-    ```python
-    class Counter:
-    def __init__(self, low, high):
-        self.current = low
-        self.high = high
+Example:
+```python
+class Counter:
+def __init__(self, low, high):
+    self.current = low
+    self.high = high
 
-    def __iter__(self):
-        return self
+def __iter__(self):
+    return self
 
-    def __next__(self): # Python 2: def next(self)
-        if self.current > self.high:
-            raise StopIteration
-        else:
-            self.current += 1
-            return self.current - 1
+def __next__(self): # Python 2: def next(self)
+    if self.current > self.high:
+        raise StopIteration
+    else:
+        self.current += 1
+        return self.current - 1
 
-    for c in Counter(3, 8):
-    print(c)
-    ```
-    Output:
-    ```
-    3
-    4
-    5
-    6
-    7
-    8
-    ```
+for c in Counter(3, 8):
+print(c)
+```
+Output:
+```
+3
+4
+5
+6
+7
+8
+```
 
-    3. __str__ & __repr__: Both the functions are similar, i.e both are used to "represent"
-    an object in a string. __repr__ gives you an official representation while __str gives
-    informal  representation.
-    For example:
-    ```python
-    x=1
-    print(repr(x))
-    print(str(x))
-    y='string'
-    print(repr(y))
-    print(str(y))
-    ```
-    Output:
-    ```
-    1
-    1
-    'string'
-    string
-    ```
-    In the above example, the return of repr() and str() are identical for int x, but not for
-    string y. Therefore the default implementation of __repr__ for a str object can be called as
-    an argument to eval and the return value would be a valid str object.
+3. __str__ & __repr__: Both the functions are similar, i.e both are used to "represent"
+an object in a string. __repr__ gives you an official representation while __str gives
+informal  representation.
+For example:
+```python
+x=1
+print(repr(x))
+print(str(x))
+y='string'
+print(repr(y))
+print(str(y))
+```
+Output:
+```
+1
+1
+'string'
+string
+```
+In the above example, the return of repr() and str() are identical for int x, but not for
+string y. Therefore the default implementation of __repr__ for a str object can be called as
+an argument to eval and the return value would be a valid str object.
 
-    4. dir(): This method takes only 1 object as a parameter and returns a list of 
-    attributes of the object.
-    For example:
-    ```python
-    class num:
-        def __init__(self):
-            return [1,2,3]
+4. dir(): This method takes only 1 object as a parameter and returns a list of 
+attributes of the object.
+For example:
+```python
+class num:
+    def __init__(self):
+        return [1,2,3]
 
-    n=num()
-    print(dir(n))
-    ```
-    Output:
-    ```
-    [1,2,3]
-    ```
+n=num()
+print(dir(n))
+```
+Output:
+```
+[1,2,3]
+```
 
 
