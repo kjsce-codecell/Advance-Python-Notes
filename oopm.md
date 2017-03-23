@@ -2,13 +2,12 @@
 
 ### Class
 
-```
 A class is a user-defined data type. Its a collection of
 objects, where objects can represent just about anything
 from integers to real world objects like a ball. Structure of Classes
 in python are very similar to that of c++ or java. 
-```
-### For example: ###
+
+For example: 
 
 ```python
 class world:
@@ -48,6 +47,7 @@ The __init__ method in python is similar to constructors in java or c++.
 That means it is run as soon as an object of the class is instantiated.
 This method is useful to initialize your objects in the class, before
 proceed further method calls.
+
 For example:
 ```python
 class name:
@@ -64,10 +64,34 @@ Output:
 ```
 Hi, my name is Vinitra
 ```
+### Inheritance
 
+Inheritance is one of the most powerful concepts of object oriented programming.
+It is the mechanism of deriving features of one class from another class facilitating
+code reusability.
+It constitutes defining a new class which is similar or identical to a class that 
+already exists. The new class is hence called #####derived##### class or 
+##### child ##### class and the one from which it is inherited is called the 
+##### base ##### class or the ##### parent ##### class.
+For example:
+```python
+class side:
+    def __init__(self,l,b):
+        self.l=l
+        self.b=b
 
+class area(side):
 
+    def __init__(self,l,b):
+        side.__init__(self,l,b)
 
+    def Area(self):
+        print('Area of the rectange is ',self.l*self.b)
 
-
-    
+a=area(4,5)
+a.Area()
+```
+Output:
+```
+Area of the rectangle is 20
+```
