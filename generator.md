@@ -1,4 +1,4 @@
-# In-Build Generators:
+## In-Build Generators:
 A generator is a function that generates output whenever you call it and remembers the current state untill the next call is made
 
 A simple example of a generator is ```range()``` function in python
@@ -11,7 +11,7 @@ range(90000000000000000000000000)
 ```
 The reason is this creates a generator which calculates next element every time you call it
 
-## Use of in-build generators
+### Use of in-build generators
 To create a generator we have to write our expression inside parenthesis '()'.
 ```python
 n = 10
@@ -58,6 +58,6 @@ def fibo(n):
         yield f1
 
 ```
-## Important points
+### Important points
 1. Generators consume more time but are memory efficient and do not blow up your ram by calculating everything before hand. 
 2. Normal method is faster but comsumes more ram memory.
