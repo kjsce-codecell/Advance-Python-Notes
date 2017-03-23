@@ -60,4 +60,4 @@ def fibo(n):
 ```
 ### Important points
 1. Generators consume more time but are memory efficient and do not blow up your ram by calculating everything before hand. 
-2. Normal method is faster but comsumes more ram memory.
+2. Normal method is faster but consumes more ram memory.
