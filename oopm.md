@@ -96,7 +96,7 @@ a.Area()
 Output:
 ```
 Area of the rectangle is 20
-    ```
+```
 2. Super()
 
 ```super()``` method is used to access data members and functions of parent class.
