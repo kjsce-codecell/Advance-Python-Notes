@@ -205,7 +205,10 @@ Output:
 
 3. __str__ & __repr__: Both the functions are similar, i.e both are used to "represent"
 an object in a string. __repr__ gives you an official representation while __str gives
-informal  representation.
+informal  representation. str() is used for creating output for end user while repr()
+is mainly used for debugging and development. Main goal of repr() is to be 
+unambiguous and that of str() is to be readable. For example if we suspect a float
+has a small rounding error, repr will show us while str may not.
 For example:
 ```python
 x=1
@@ -225,6 +228,37 @@ string
 In the above example, the return of repr() and str() are identical for int x, but not for
 string y. Therefore the default implementation of __repr__ for a str object can be called as
 an argument to eval and the return value would be a valid str object.
+Look at another example here:
+```python
+class Complex:
+    
+    def __init__(self, real, imag):
+       self.real = real
+       self.imag = imag
+ 
+    # For call to repr(). Prints object information 
+    def __repr__(self):
+       return '%s + i%s' % (self.real, self.imag)    
+ 
+    # For call to str(). Prints readable form
+    def __str__(self):
+       return '%s + i%s' % (self.real, self.imag)    
+ 
+ 
+t = Complex(10, 20)
+ 
+print str(t)  
+print(t)
+print repr(t)
+```
+Output:
+```
+10 + i20
+10 + i20
+Rational(10,20)
+```
+You can redefine __str__ and __repr__ to suit you needs as done in the above
+example.
 
 4. dir(): This method takes only 1 object as a parameter and returns a list of 
 attributes of the object.
