@@ -66,65 +66,65 @@ Hi, my name is Vinitra
 ```
 ### Inheritance
 
-#### 1. Introduction
+1. Introduction
 
-    Inheritance is one of the most powerful concepts of object oriented programming.
-    It is the mechanism of deriving features of one class from another class facilitating
-    code reusability.
-    It constitutes defining a new class which is similar or identical to a class that 
-    already exists. The new class is hence called derived class or child class and the one 
-    from which it is inherited is called the base class or the parent class.
+Inheritance is one of the most powerful concepts of object oriented programming.
+It is the mechanism of deriving features of one class from another class facilitating
+code reusability.
+It constitutes defining a new class which is similar or identical to a class that 
+already exists. The new class is hence called derived class or child class and the one 
+from which it is inherited is called the base class or the parent class.
 
-    For example:
-    ```python
-    class side:
-        def __init__(self,l,b):
-            self.l=l
-            self.b=b
+For example:
+```python
+class side:
+    def __init__(self,l,b):
+        self.l=l
+        self.b=b
 
-    class area(side):
+class area(side):
 
-        def __init__(self,l,b):
-            side.__init__(self,l,b)
+    def __init__(self,l,b):
+        side.__init__(self,l,b)
 
-        def Area(self):
-            print('Area of the rectange is ',self.l*self.b)
+    def Area(self):
+        print('Area of the rectange is ',self.l*self.b)
 
-    a=area(4,5)
-    a.Area()
+a=area(4,5)
+a.Area()
+```
+Output:
+```
+Area of the rectangle is 20
     ```
-    Output:
-    ```
-    Area of the rectangle is 20
-    ```
-#### 2. Super()
+2. Super()
 
-    ```super()``` method is used to access data members and functions of parent class.
-    The example given in the example for inheritance can also be executed by the
-    ```super()``` method.
+```super()``` method is used to access data members and functions of parent class.
+The example given in the example for inheritance can also be executed by the
+```super()``` method.
 
-    For example:
-    ```python
-    class side:
-        def __init__(self,l,b):
-            self.l=l
-            self.b=b
+For example:
+```python
+class side:
+    def __init__(self,l,b):
+        self.l=l
+        self.b=b
 
-    class area(side):
-        
-        def __init__(self,l,b):
-            super(area,self).__init__(l,b)
+class area(side):
+    
+    def __init__(self,l,b):
+        super(area,self).__init__(l,b)
 
-        def Area(self):
-            print('Area of the rectange is ',self.l*self.b)
+    def Area(self):
+        print('Area of the rectange is ',self.l*self.b)
 
-    a=area(4,5)
-    a.Area()
-    ```
-    Output:
-    ```
-    Area of the rectangle is 20
-    ```
+a=area(4,5)
+a.Area()
+```
+Output:
+```
+Area of the rectangle is 20
+```
 ### Operator Overloading
 
 Python operators work for built-in classes. But the same operators can be made to behave
