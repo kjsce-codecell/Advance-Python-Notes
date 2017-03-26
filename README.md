@@ -17,7 +17,7 @@
     4. [reduce]()
 6. [Muliprocessing or Multi threading]()
 7. [Object Oriented Programming](./oopm.md)
-    1. [ \__init__ (Constructor) ]()
+    1. [ \__init__ (Constructor) ](./oopm.md/#the-init-method)
     2. [Inheritance]()
         1. [Introduction]()
         2. [super method]()
