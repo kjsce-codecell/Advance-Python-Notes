@@ -35,4 +35,3 @@
     4. [.format function]()
     5. [ logging in python]()
     6. [args and kwargs]()
-
