@@ -1,5 +1,10 @@
 ## Object Oriented Programming Methodology
 
+Table of Contents
+=================
+* [Class](#class)
+* [Inheritance](#inheritance)
+
 ### Class
 
 A class is a user-defined data type. Its a collection of
