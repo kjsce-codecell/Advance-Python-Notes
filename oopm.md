@@ -97,7 +97,7 @@ Output:
 ```
 Area of the rectangle is 20
 ```
-2. Super()
+2. Super Method
 
 ```super()``` method is used to access data members and functions of parent class.
 The example given in the example for inheritance can also be executed by the
@@ -162,7 +162,7 @@ turn is Point.__add__(p1,p2). Also in the above example, __str__ is special func
 like the __init__ method i.e it gets called whenever the class is instantiated.
 This method is used to control the output format
 
-### Special Functions
+### Special Methods 
 
 Special functions are those methods which get executed as soon as the class is
 instantiated. For example: the __init__ method.
