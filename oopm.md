@@ -66,7 +66,7 @@ Hi, my name is Vinitra
 ```
 ### Inheritance
 
-1. Introduction
+#### 1. Introduction
 
 Inheritance is one of the most powerful concepts of object oriented programming.
 It is the mechanism of deriving features of one class from another class facilitating
