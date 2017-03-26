@@ -31,7 +31,7 @@
 8. [Miscellaneous Features]()
     1. [with as](./With_As.md)
     2. [yield](./Yield.md)
-    3. [lambda](./Lambda.md)
+    3. [lambda](./Lamda.md)
     4. [.format function](./Format_Function.md)
     5. [ logging in python](./Logging.md)
     6. [args and kwargs](./Args.md)
