@@ -97,7 +97,7 @@ Output:
 ```
 Area of the rectangle is 20
 ```
-2. Super Method
+#### 2. Super Method
 
 ```super()``` method is used to access data members and functions of parent class.
 The example given in the example for inheritance can also be executed by the
