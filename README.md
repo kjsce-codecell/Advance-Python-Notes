@@ -20,7 +20,7 @@
     1. [Class](./oopm.md/#class)
     2. [ \__init__ (Constructor) ](./oopm.md/#the-init-method)
     3. [Inheritance](./oopm.md/#inheritance)
-        1. [Introduction](./oopm.md/#inheritance/#introduction)
+        1. [Introduction](./oopm.md/#introduction)
         2. [Super Method](./oopm.md/#super-method)
     4. [Operator Overloading](./oopm.md/#operator-overloading)
     5. [Special Methods](./oopm.md/#special-methods)
